@@ -1,0 +1,5 @@
+SELECT c.CUS_GENDER, COUNT(DISTINCT c.CUS_ID) AS num_customers
+FROM order_ o
+JOIN customer c ON o.CUS_ID = c.CUS_ID
+WHERE o.ORD_AMOUNT >= 3000
+GROUP BY c.CUS_GENDER;
